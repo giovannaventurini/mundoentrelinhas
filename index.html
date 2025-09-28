@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Entre Linhas</title>
+    <link rel="stylesheet" href="mundo.css">
+    <link rel="icon" href="img/favicon.png">  <!--FAVICON-->
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="img/logo.png" alt="logoheader" class="logo"> 
+        </div>
+    </header>
+
+    <!-- Slider -->
+    <section class="slider">
+        <div class="slider-content">
+          <input type="radio" name="btn-radio" id="radio1"> 
+          <input type="radio" name="btn-radio" id="radio2">
+          <input type="radio" name="btn-radio" id="radio3">
+    
+          <div class="slide-box primeiro">
+            <img class="img-desktop" src="img/Carrossel 1.jpeg" alt="slide 1">
+            <img class="img-mobile" src="img/Carrossel 1.jpeg" alt="slide 1">
+          </div>
+    
+          <div class="slide-box">
+            <img class="img-desktop" src="img/Carrossel 2.jpeg" alt="slide 2">
+            <img class="img-mobile" src="img/Carrossel 2.jpeg" alt="slide 2">
+          </div>
+
+          <div class="slide-box">
+            <img class="img-desktop" src="img/Carrossel.jpeg" alt="slide 3">
+            <img class="img-mobile" src="img/Carrossel.jpeg" alt="slide 3">
+          </div>
+    
+          <div class="nav-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+          </div>
+    
+          <div class="nav-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+          </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+<!-- Primeiro livro -->
+<div class="book">
+    <a href="https://www.amazon.com.br/telefone-preto-outras-histórias/dp/6555113049"><img src="img" alt="Capa do livro 1"></a>
+    <div class="book-content">
+        <h2 class="book-title">Livro 1</h2>
+        <p class="book-description">
+            <h4>SINOPSE:</h4>
+            Breve descrição livro 1. 
+            <div id="aparecer">Continuação</div> 
+            <span class="extra-content"> Descrição extra.</span>
+        </p>
+        <button class="read-more" onclick='minhafuncao()'>Ler mais</button>
+        <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9734;</div>
+    </div>
+</div>
+    
+    
+        
+
+   <footer>
+     MUNDO ENTRE LINHAS
+   </footer>
+
+   <script>
+
+    function minhafuncao() {
+        var x = document.getElementById("aparecer");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+
+   </script>
+
+</body>
+</html>
