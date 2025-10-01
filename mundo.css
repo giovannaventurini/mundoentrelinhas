@@ -89,6 +89,7 @@ header h1 {
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .read-more:hover {
@@ -117,7 +118,7 @@ P {
 
 .logo {
     max-height: 100%; /* Garante que a logo não exceda a altura do header */
-    height: 300px; /* Tamanho inicial da logo */
+    height: 280px; /* Tamanho inicial da logo */
     width: auto; /* Mantém as proporções da imagem */
 }
 
