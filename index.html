@@ -16,9 +16,17 @@
             <img src="img/logo.png" alt="logoheader" class="logo">
           <div class="cabecalho">
               <a href="">Início</a>
-              <a href="livros/index.html">Gêneros</a>
-              <a href="quem_somos/index.html">Quem somos</a>
-          </div>
+              <div class="dropdown">
+                <a href="#" class="dropdown-btn">Gêneros</a>
+                <div class="dropdown-content">
+                    <a href="livros/index.html">Romance</a>
+                    <a href="livros/macabro.html">Terror</a>
+                    <a href="livros/hqs.html">HQS</a>
+
+                </div>
+              </div>
+                  <a href="quem-somos/quem-somos.html">Quem somos</a>          
+                </div>
           <img src="img/sistema_solar.webp" alt="logoheader" class="logo">
         </div>
     </header>
@@ -94,25 +102,7 @@ Nosso catálogo conta com diferentes estilos:<br><br>
 
     <a href="#inicio" id="back-to-top-btn" title="Voltar ao topo">&uarr;</a>
 
-    <script>
-        // Pega o botão do HTML
-        const backToTopButton = document.getElementById("back-to-top-btn");
-
-        // Função que será executada quando o usuário rolar a página
-        const scrollFunction = () => {
-            // Se o usuário rolar mais de 300 pixels para baixo
-            if (window.scrollY > 300) {
-                // Adiciona a classe 'show' para mostrar o botão
-                backToTopButton.classList.add("show");
-            } else {
-                // Remove a classe 'show' para esconder o botão
-                backToTopButton.classList.remove("show");
-            }
-        };
-
-        // Adiciona um "ouvinte" que chama a função sempre que a página for rolada
-        window.addEventListener("scroll", scrollFunction);
-    </script>
+    <script src="script.js" defer></script>
 
 </body>
 </html>

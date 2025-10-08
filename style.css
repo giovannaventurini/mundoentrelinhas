@@ -1,4 +1,4 @@
-/* Importa fontes externas do Google Fonts para serem usadas no site. */
+/* Importa fontes externas do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Geist+Mono:wght@100..900&display=swap');
 
 /* ---- VARIÁVEIS DE CORES E FONTES ---- */
@@ -6,252 +6,270 @@
     --cor-principal: #4A1859; /* Roxo escuro */
     --cor-secundaria: #ffa100; /* Laranja */
     --cor-branco: #ffffff; /* Branco */
+    --cor-texto-claro: #f0f0f0;
+    --cor-texto-escuro: #333;
+    --sombra-padrao: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --fonte-principal: 'Akshar', sans-serif;
+    --fonte-titulos: 'Geist Mono', monospace;
 }
 
-/* ---- CONFIGURAÇÕES GERAIS ---- */
-
-/* Rolagem suave */
+/* ---- CONFIGURAÇÕES GLOBAIS ---- */
 html {
     scroll-behavior: smooth;
 }
 
-/* Remove a barra de rolagem padrão do navegador. */
-::-webkit-scrollbar {
-    display: none;
-}
-
-/* Estilos aplicados ao corpo (body) da página. */
 body {
-    font-family: 'Akshar', sans-serif; /* Define a fonte principal da página. */
-    margin: 0; /* Remove a margem padrão. */
-    padding: 0; /* Remove o preenchimento padrão. */
-    background: linear-gradient( to right, #1e0036, #dbc7fd, #1e0036); /* Define um fundo com gradiente de cores. */
-    color: #333; /* Define a cor do texto padrão. */
-    overflow-x: hidden; /* Esconde qualquer conteúdo que transborde horizontalmente. */
+    font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient( to right, #1e0036, #dbc7fd, #1e0036);
+    color: var(--cor-texto-escuro);
+    overflow-x: hidden;
 }
 
 /* ---- CABEÇALHO (HEADER) ---- */
-
-/* Estilização do cabeçalho principal. */
 header {
-    background-color: #4A1859; /* Cor de fundo roxa. */
-    border-bottom-left-radius: 10px; /* Arredonda o canto inferior esquerdo. */
-    border-bottom-right-radius: 10px; /* Arredonda o canto inferior direito. */
-    color: white; /* Cor do texto. */
-    display: flex; /* Habilita o layout flexbox para alinhar os itens. */
-    align-items: center; /* Alinha os itens verticalmente ao centro. */
-    justify-content: space-between; /* Distribui o espaço entre os itens. */
-    border-bottom: solid 1.5px #ffa100; /* Adiciona uma borda laranja na parte inferior. */
-    height: 120px; /* Define a altura fixa do cabeçalho. */
-    text-shadow: #000000 2px 2px; /* Adiciona uma sombra ao texto. */
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--cor-secundaria);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Estilização da seção de links de navegação no cabeçalho. */
-.cabecalho {
-    color: #ffffff; /* Cor do texto. */
-    padding: 10px; /* Espaçamento interno. */
-    display: flex; /* Organiza os links em linha. */
-    align-items: center; /* Alinha os links verticalmente. */
-    justify-content: center; /* Alinha os links horizontalmente. */
-    font-size: 1.5em; /* Tamanho da fonte. */
-    font-weight: bold; /* Deixa o texto em negrito. */
-    margin-right: 50px; /* Margens para posicionamento. */
-    margin-left: 10px;
-    border-radius: 15px; /* Arredonda as bordas. */
-    margin: 250px;
-    gap: 80px; /* Espaço entre os links. */
-}
-
-/* Estilos para os links (<a>) dentro do cabeçalho. */
-header a {
-    color: white; /* Cor do texto. */
-    text-decoration: underline; /* Adiciona sublinhado. */
-}
-
-/* Estilo para links já visitados. */
-header a:visited {
-    color: rgb(255, 255, 255);
-}
-
-/* Efeito ao passar o mouse sobre os links. */
-header a:hover {
-    color: #ffbf51; /* Muda a cor do texto. */
-    transform: scale(1.1); /* Aumenta o tamanho do link. */
-    transition: 180ms ease-in; /* Define uma transição suave para o efeito. */
-}
-
-/* Estilo para o título principal (h1) no cabeçalho. */
-header h1 {
-    margin: 0; /* Remove margens. */
-    font-size: 2.5em; /* Tamanho da fonte. */
-}
-
-/* Container para alinhar o conteúdo do cabeçalho (logos e navegação). */
 .header-content {
-    display: flex; /* Usa flexbox para alinhar os itens. */
-    align-items: center; /* Alinha verticalmente ao centro. */
-    justify-content: space-evenly; /* Distribui o espaço igualmente. */
-    gap: 10px; /* Espaço entre os elementos. */
-    text-align: center; /* Centraliza o texto. */
-    margin: 0 auto; /* Centraliza o container na página. */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* Estilização das imagens de logo no cabeçalho. */
 .logo {
-    max-height: 100%; /* Garante que a logo não exceda a altura do header. */
-    height: 100px; /* Altura da logo. */
-    width: auto; /* Mantém a proporção da imagem. */
+    height: 80px;
+    width: auto;
 }
 
+/* Menu de Navegação Principal */
+.cabecalho, .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.cabecalho a, .main-nav a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.cabecalho a:hover, .main-nav a:hover {
+    color: var(--cor-secundaria);
+    transform: scale(1.1);
+}
+
+/* Menu Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(74, 24, 89, 0.8);
+    backdrop-filter: blur(5px);
+    min-width: 160px;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Classe 'show' para o JavaScript do dropdown */
+.dropdown-content.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 /* ---- CARROSSEL DE IMAGENS (SLIDER) ---- */
-
-/* Define o contêiner principal do carrossel. */
-.slider-content {
-    width: 400%; /* Largura total para comportar todos os slides lado a lado. */
-    margin-top: 5px; /* Margem no topo. */
-    height: auto; /* Altura automática. */
-    display: flex; /* Alinha os slides horizontalmente. */
+.slider {
+    width: 100%;
+    overflow: hidden;
 }
-
-/* Esconde os botões de rádio (usados para controlar o slide) e as imagens para mobile por padrão. */
-.slider-content input, .img-mobile {
+.slider-content {
+    width: 300%;
+    display: flex;
+    position: relative;
+}
+.slider-content input {
     display: none;
 }
-
-/* Estilização de cada caixa de slide individual. */
 .slide-box {
-    width: 25%; /* Cada slide ocupa 25% da largura do .slider-content. */
-    height: auto;
-    position: relative; /* Necessário para posicionar os botões de navegação. */
-    transition: 1s; /* Animação suave na troca de slides. */
+    width: 33.33%;
+    transition: margin-left 0.8s ease-in-out;
 }
-
-/* Estilização das imagens dentro do carrossel. */
 .slide-box img {
-    width: 100%; /* Imagem ocupa toda a largura da .slide-box. */
-    height: 500px; /* Altura fixa para as imagens. */
-    border: 1.5px solid #ffa100; /* Borda laranja. */
-}
-
-/* Posicionamento dos botões de navegação (manual e automático). */
-.nav-manual, .nav-auto {
-    position: absolute; /* Permite posicionar sobre as imagens. */
     width: 100%;
-    margin-top: 28%;
-    margin-left: 45%;
+    height: 500px;
+    object-fit: cover;
+}
+.nav-manual, .nav-auto {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    float: center;
+    gap: 15px;
 }
-
-/* Estilização dos botões (bolinhas). */
 .nav-manual .manual-btn, .nav-auto div {
-    border: 2px solid #ffa100; /* Borda laranja. */
-    padding: 10px; /* Espaçamento interno para criar o formato de bolinha. */
-    border-radius: 50%; /* Deixa o elemento redondo. */
-    cursor: pointer; /* Muda o cursor para uma mão. */
-    transition: 0.2s; /* Transição suave. */
-    margin-top: -32px;
+    border: 2px solid var(--cor-secundaria);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
-/* Espaçamento entre os botões. */
-.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child) {
-    margin-right: 10px;
-}
-
-/* Efeito ao passar o mouse sobre o botão manual. */
 .nav-manual .manual-btn:hover {
-    background-color: #ffa100;
+    background-color: var(--cor-secundaria);
 }
-
-/* Lógica de controle do Carrossel */
-/* Quando o primeiro radio button está selecionado, a bolinha automática correspondente fica roxa. */
 #radio1:checked ~ .nav-auto .auto-btn1,
 #radio2:checked ~ .nav-auto .auto-btn2,
 #radio3:checked ~ .nav-auto .auto-btn3 {
-    background-color: #b039d4;
+    background-color: var(--cor-principal);
+}
+#radio1:checked ~ .primeiro { margin-left: 0; }
+#radio2:checked ~ .primeiro { margin-left: -33.33%; }
+#radio3:checked ~ .primeiro { margin-left: -66.66%; }
+
+
+/* ---- CONTEÚDO PRINCIPAL ---- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-/* Move o conjunto de slides para a esquerda com base no botão de rádio selecionado. */
-#radio1:checked ~ .primeiro {
-    margin-left: 0%; /* Mostra o primeiro slide. */
+.section-title {
+    text-align: center;
+    font-size: 2.8em;
+    color: var(--cor-principal);
+    margin-bottom: 2rem;
+    font-family: var(--fonte-titulos);
 }
 
-#radio2:checked ~ .primeiro {
-    margin-left: -25%; /* Desloca para mostrar o segundo slide. */
+/* Estilo para a caixa de texto da PÁGINA INICIAL */
+.welcome-box {
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 35px; /* <--- O ESPAÇAMENTO NECESSÁRIO */
+    border: 5px double var(--cor-secundaria);
+    background-color: var(--cor-principal);
+    border-radius: 10px;
+    padding: 15px;
+    text-shadow: #000000 1.5px 1.5px;
+}
+.welcome-box p {
+    text-align: justify;
 }
 
-#radio3:checked ~ .primeiro {
-    margin-left: -50%; /* Desloca para mostrar o terceiro slide. */
+/* ---- ESTILOS DA PÁGINA "QUEM SOMOS" ---- */
+.about-section {
+    background-color: var(--cor-branco);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    margin-top: 35px; /* <--- O MESMO ESPAÇAMENTO NECESSÁRIO */
+    box-shadow: var(--sombra-padrao);
 }
 
-
-/* ---- SEÇÃO DE CONTEÚDO PRINCIPAL ---- */
-
-/* Estilização do container de texto "Bem-vindo". */
-.fundo {
-    color: rgb(255, 255, 255); /* Cor do texto. */
-    font-weight: bold; /* Texto em negrito. */
-    font-size: 25px; /* Tamanho da fonte. */
-    margin-top: 35px; /* Margem superior. */
-    margin-left: 60px; /* Margens laterais. */
-    margin-right: 60px;
-    border: 5px double #ffa100; /* Borda dupla laranja. */
+.story-content {
     display: flex;
-    flex-direction: column;
-    background-color: #4a1859; /* Cor de fundo roxa. */
-    border-radius: 10px; /* Bordas arredondadas. */
+    align-items: center;
+    gap: 2rem;
 }
-
-/* Estilização do parágrafo dentro da seção "fundo". */
-div p {
-    margin-top: 10px; /* Margem no topo do texto. */
-    text-align: justify; /* Alinhamento justificado. */
-    padding: 15px; /* Espaçamento interno. */
-    text-shadow: #000000 1.5px 1.5px; /* Sombra no texto. */
+.story-content img {
+    max-width: 300px;
+    border-radius: 10px;
+    border: 3px solid var(--cor-secundaria);
 }
-
-/* ---- ESTILOS DE LIVROS (Não utilizados na página principal, mas definidos) ---- */
-/* Os estilos abaixo parecem ser para uma seção de livros que não está no HTML fornecido, mas estão prontos para uso. */
-
-/* Estilo do container de cada livro. */
-.book {
-    display: flex;
-    align-items: flex-start;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 40px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.story-text h3 {
+    color: var(--cor-principal);
+    font-family: var(--fonte-titulos);
+    font-size: 1.8em;
+    margin-bottom: 1rem;
 }
-
-/* Estilo da imagem (capa) do livro. */
-.book img {
+.story-text p {
+    line-height: 1.7;
+    text-align: justify;
+    color: var(--cor-texto-escuro); /* Garante a cor correta do texto */
+}
+.team-section {
+    padding: 2rem;
+}
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.team-member-card {
+    background-color: var(--cor-branco);
+    border-radius: 15px;
+    box-shadow: var(--sombra-padrao);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-top: 5px solid var(--cor-principal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.team-member-card img {
     width: 150px;
-    height: auto;
-    margin-right: 20px;
-    border-radius: 8px;
-    transition: 500ms linear; /* Efeito de transição suave. */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--cor-secundaria);
+    margin-bottom: 1rem;
 }
-
-/* Efeito de sombra ao passar o mouse sobre a capa do livro. */
-.book img:hover {
-    top: 1px;
-    box-shadow: 5px 5px 5px #FFA100;
-}
-
-/* Container para o conteúdo textual do livro (título, descrição, etc.). */
-.book-content {
-    flex: 1; /* Permite que este container ocupe o espaço restante. */
-}
-
-/* Estilo do título do livro. */
-.book-title {
+.member-info h3 {
+    color: var(--cor-principal);
     font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #4A1859;
+    margin-bottom: 0.5rem;
+}
+.member-info h4 {
+    color: var(--cor-secundaria);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.member-info p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
 }
 
 /* ---- RODAPÉ (FOOTER) ---- */
@@ -266,37 +284,42 @@ div p {
 
 /* ---- BOTÃO VOLTAR AO TOPO ---- */
 #back-to-top-btn {
-    position: fixed; /* Posição fixa na tela */
+    position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--cor-principal); /* Usa a cor roxa do seu tema */
+    background-color: var(--cor-principal);
     color: var(--cor-branco);
     width: 50px;
     height: 50px;
-    border-radius: 50%; /* Deixa o botão redondo */
-    border: 2px solid var(--cor-secundaria); /* Borda laranja */
+    border-radius: 50%;
+    border: 2px solid var(--cor-secundaria);
     text-align: center;
-    line-height: 46px; /* Alinha a seta verticalmente */
+    line-height: 46px;
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
-    z-index: 100; /* Garante que fique acima de outros elementos */
+    z-index: 100;
     cursor: pointer;
-    
-    /* Esconde o botão por padrão com uma transição suave */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
-
-/* Efeito ao passar o mouse */
 #back-to-top-btn:hover {
-    background-color: var(--cor-secundaria); /* Muda para laranja no hover */
-    color: var(--cor-principal); /* Muda a seta para roxo */
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
 }
-
-/* Classe que será adicionada via JavaScript para mostrar o botão */
 #back-to-top-btn.show {
     opacity: 1;
     visibility: visible;
+}
+
+/* ---- RESPONSIVIDADE ---- */
+@media (max-width: 768px) {
+    .story-content {
+        flex-direction: column;
+    }
+    .header-content{
+        flex-direction: column;
+        padding: 1rem 0;
+    }
 }
