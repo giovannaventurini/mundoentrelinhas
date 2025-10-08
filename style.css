@@ -313,13 +313,53 @@ header {
     visibility: visible;
 }
 
-/* ---- RESPONSIVIDADE ---- */
+/* RESPONSIVIDADE */
+/* @media aplica estilos apenas quando a condição (tamanho da tela) é atendida. */
+
+/* Para tablets e telas menores (até 768px) */
 @media (max-width: 768px) {
-    .story-content {
-        flex-direction: column;
+    .site-header h1 {
+        font-size: 2rem;
     }
-    .header-content{
-        flex-direction: column;
-        padding: 1rem 0;
+    
+    .header-content {
+        flex-direction: column; /* Coloca o logo acima do texto */
+        gap: 10px;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Menu vira uma coluna */
+        gap: 10px;
+    }
+
+    .banner h2 {
+        font-size: 2.5rem;
+    }
+
+    .recipe-container {
+        flex-direction: column; /* Receitas ficam uma abaixo da outra */
     }
 }
+
+/* Para celulares (até 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .site-header {
+        padding: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+        .site-header h1 {
+            font-size: 1.8rem;
+        }
+    }
