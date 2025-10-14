@@ -1,24 +1,20 @@
-// --- CÓDIGO DO DROPDOWN ---
-const dropdownBtn = document.querySelector('.dropdown-btn');
-const dropdownContent = document.querySelector('.dropdown-content');
 
-// Previne o comportamento padrão e mostra/esconde o menu
-if (dropdownBtn) {
-    dropdownBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        dropdownContent.classList.toggle('show');
-    });
-}
+  const dropdownBtn = document.querySelector('.dropdown-btn');
+  const dropdownContent = document.querySelector('.dropdown-content');
 
-// Fecha o menu se clicar fora
-window.addEventListener('click', (e) => {
-    if (dropdownContent && !e.target.matches('.dropdown-btn')) {
-        dropdownContent.classList.remove('show');
+  dropdownBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownContent.classList.toggle('show');
+  });
+
+  // Fecha o menu se clicar fora
+  window.addEventListener('click', (e) => {
+    if (!e.target.matches('.dropdown-btn')) {
+      dropdownContent.classList.remove('show');
     }
-});
+  });
 
-
-// --- CÓDIGO DO BOTÃO VOLTAR AO TOPO ---
+  // --- CÓDIGO DO BOTÃO VOLTAR AO TOPO ---
 const backToTopButton = document.getElementById("back-to-top-btn");
 
 // Função que será executada quando o usuário rolar a página
