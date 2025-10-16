@@ -43,9 +43,56 @@ header {
     gap: 80px; /* Espaço entre os links. */
 }
 
+.dropdown{
+    position: relative;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.dropdown-btn{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    backdrop-filter: blur(3px);
+    min-width: 160px;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.dropdown-content a{
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    
+}
+
+.dropdown-content a:hover{
+    background-color: #ffba39;
+    border-radius: 15px;
+}
+
+.show{
+    display: block;
+    animation: fadeIn 0.2 ease-in-out;
+}
+
+@keyframes fadeIn {
+    from{ opacity: 0; transform: translateY(-5px);}
+    to{ opacity: 1; transform: translateY(0);} 
+}
+
 header a {
     color: white; /* Cor do texto. */
-    text-decoration: underline; /* Adiciona sublinhado. */
+    text-decoration: none; /* Adiciona sublinhado. */
 }
 
 /* Estilo para links já visitados. */

@@ -9,18 +9,102 @@ body {
     font-family: 'Akshar', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fdf5e6;
-    color: #333;
+    background: linear-gradient( to right, #260049, #d096ff, #260049);
+    color: #ffffff;
+    font-weight: bold;
     overflow-x: hidden;
 }
 
 header {
-    background-color: #4A1859;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 120px;
+    background:linear-gradient( #250036, #ef77ff); /* Cor de fundo roxa. */
+    border-bottom-left-radius: 10px; /* Arredonda o canto inferior esquerdo. */
+    border-bottom-right-radius: 10px; /* Arredonda o canto inferior direito. */
+    color: white; /* Cor do texto. */
+    display: flex; /* Habilita o layout flexbox para alinhar os itens. */
+    align-items: center; /* Alinha os itens verticalmente ao centro. */
+    justify-content: space-between; /* Distribui o espaço entre os itens. */
+    border-bottom: solid 1.5px #ffa100; /* Adiciona uma borda laranja na parte inferior. */
+    height: 120px; /* Define a altura fixa do cabeçalho. */
+    text-shadow: #000000 2px 2px; /* Adiciona uma sombra ao texto. */
+}
+
+.cabecalho {
+    color: #ffffff; /* Cor do texto. */
+    padding: 10px; /* Espaçamento interno. */
+    display: flex; /* Organiza os links em linha. */
+    align-items: center; /* Alinha os links verticalmente. */
+    justify-content: center; /* Alinha os links horizontalmente. */
+    font-size: 1.5em; /* Tamanho da fonte. */
+    font-weight: bold; /* Deixa o texto em negrito. */
+    margin-right: 50px; /* Margens para posicionamento. */
+    margin-left: 10px;
+    border-radius: 15px; /* Arredonda as bordas. */
+    margin: 250px;
+    gap: 80px; /* Espaço entre os links. */
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.dropdown-btn{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    backdrop-filter: blur(3px);
+    min-width: 160px;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.dropdown-content a{
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    
+}
+
+.dropdown-content a:hover{
+    background-color: #f5a7ff;
+    border-radius: 15px;
+}
+
+.show{
+    display: block;
+    animation: fadeIn 0.2 ease-in-out;
+}
+
+@keyframes fadeIn {
+    from{ opacity: 0; transform: translateY(-5px);}
+    to{ opacity: 1; transform: translateY(0);} 
+}
+
+header a {
+    color: white; /* Cor do texto. */
+    text-decoration: none; /* Adiciona sublinhado. */
+}
+
+/* Estilo para links já visitados. */
+header a:visited {
+    color: rgb(255, 255, 255);
+}
+
+/* Efeito ao passar o mouse sobre os links. */
+header a:hover {
+    color: #fda31c; /* Muda a cor do texto. */
+    transform: scale(1.1); /* Aumenta o tamanho do link. */
+    transition: 180ms ease-in; /* Define uma transição suave para o efeito. */
 }
 
 header h1 {
@@ -29,14 +113,19 @@ header h1 {
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
+   display: flex; /* Usa flexbox para alinhar os itens. */
+    align-items: center; /* Alinha verticalmente ao centro. */
+    justify-content: space-evenly; /* Distribui o espaço igualmente. */
+    gap: 10px; /* Espaço entre os elementos. */
+    text-align: center; /* Centraliza o texto. */
+    margin: 0 auto; /* Centraliza o container na página. */
+
 }
 
 .book {
     display: flex;
     align-items: flex-start;
-    background-color: white;
+    background: linear-gradient( to right,  #250036, #f5a7ff);
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
@@ -50,8 +139,8 @@ header h1 {
     height: auto;
     margin-right: 20px;
     border-radius: 8px;
-    transition: 500ms linear;
 }
+
 
 .book img:hover{top:1px; box-shadow: 5px 5px 5px #FFA100}
 
@@ -63,7 +152,8 @@ header h1 {
 .book-title {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #4A1859;
+    color: #f5a7ff;
+    text-shadow: #810eec 2px 2px 2px;
 }
 
 .book-description {
@@ -79,13 +169,13 @@ header h1 {
     max-height: 500px; /* Aumenta a altura para mostrar o conteúdo completo */
 }
 
-.book:hover{top:1px; box-shadow: 5px 5px 5px #8d8d8d}
+.book:hover{top:3px; box-shadow: 5px 5px 5px #c74747}
 
 .read-more {
     border: none;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4A1859;
+    background-color: #250036;
     color: white;
     text-decoration: none;
     border-radius: 10px;
@@ -94,7 +184,7 @@ header h1 {
 }
 
 .read-more:hover {
-    background-color: #FFA100;
+    background-color: #ba43ff;
 }
 
 .read-more:focus {
@@ -118,9 +208,9 @@ P {
 }
 
 .logo {
-    max-height: 100%; /* Garante que a logo não exceda a altura do header */
-    height: 154px; /* Tamanho inicial da logo */
-    width: auto; /* Mantém as proporções da imagem */
+    max-height: 100%; /* Garante que a logo não exceda a altura do header. */
+    height: 100px; /* Altura da logo. */
+    width: auto; /* Mantém a proporção da imagem. */
 }
 
 .btn-aumentar {
@@ -165,12 +255,14 @@ section.slider{
 .slide-box img {
     width: 100%;
     height: 500px; 
+    border: solid 1px #FFA100;
+    border-radius: 15px;
 }
 
 .nav-manual, .nav-auto {
     position: absolute;
     width: 100%;
-    margin-top: 28%;
+    margin-top: 27%;
     margin-left: 45%;
     display: flex;
     float: center;
@@ -219,9 +311,41 @@ section.slider{
 /* end of the slider */
 
 footer {
-    background-color: #4A1859;
-    color: #fdf5e6;
+    background-color: #250036;
+    color: #ffffff;
     width: 100%;
     height: 5%;
     text-align:center;	    
  }
+
+ .hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; 
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  bottom: -50px;
+  color: rgba(255, 60, 138, 0.945);
+  font-size: 20px;
+  animation: rise 5s linear forwards;
+  filter: drop-shadow(0 0 6px rgba(245, 0, 98, 0.5));
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+

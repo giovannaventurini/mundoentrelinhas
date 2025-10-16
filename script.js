@@ -31,3 +31,62 @@ const scrollFunction = () => {
 
 // Adiciona um "ouvinte" que chama a função sempre que a página for rolada
 window.addEventListener("scroll", scrollFunction);
+
+function minhafuncao() {
+        var x = document.getElementById("aparecer");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+
+    function minhafuncao2() {
+        var x = document.getElementById("aparecer2");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+
+    function minhafuncao3() {
+        var x = document.getElementById("aparecer3");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+
+    function minhafuncao4() {
+        var x = document.getElementById("aparecer4");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+
+    function minhafuncao5() {
+        var x = document.getElementById("aparecer5");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+
+    function minhafuncao6() {
+        var x = document.getElementById("aparecer6");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
