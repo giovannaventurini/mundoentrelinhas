@@ -10,7 +10,7 @@
 </head>
 <body>
 
-
+<!--Menu-->
     <header>
         <div class="header-content">
             <img src="img/logo.png" alt="logoheader" class="logo">
@@ -30,7 +30,7 @@
         </div>
     </header>
 
-    <!-- Slider -->
+    <!-- Carrossel tela inicial -->
     <section class="slider" id="inicio">
         <div class="slider-content">
           <input type="radio" name="btn-radio" id="radio1">
@@ -68,31 +68,51 @@
     </section>
 
 
-    <div class="container">
+<main class="container">
+        <section class="how-it-works">
+            <h2 class="section-title">Sua Jornada Literária Começa Aqui!</h2>
+            <p class="section-subtitle">Seja bem-vindo(a) ao nosso cantinho especial para amantes de livros. Veja como é simples explorar nosso universo:</p>
+            <div class="steps-container">
+                <div class="step">
+                    <h3>Explore os Gêneros</h3>
+                    <p>Use nosso menu para mergulhar em mundos de Romance, Terror, HQs e muitas outras categorias que te esperam com histórias incríveis.</p>
+                </div>
+                <div class="step">
+                    <h3>Veja os Destaques</h3>
+                    <p>Nossos carrosséis na página inicial mostram recomendações especiais e os livros que estão em alta. Deixe-se surpreender pela próxima leitura!</p>
+                </div>
+                 <div class="step">
+                    <h3>Compre na Amazon</h3>
+                    <p>Gostou de um livro? Ao clicar na capa, você vai direto para a página da Amazon para realizar sua compra com toda a segurança e praticidade.</p>
+                    <img src="img/Imagem livro amazon.png" alt="Imagem capa interativa">
+                </div>
+                <div class="step">
+                    <h3>Conheça Nossa História</h3>
+                    <p>Visite a seção “Quem Somos” para descobrir a paixão por literatura que deu origem a este projeto e conhecer as mentes por trás dele.</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="fundo">
-      <p>
-        Bem-vindo ao nosso blog de livros!
-Aqui você encontra uma experiência simples e prática para descobrir novos mundos através da leitura.<br><br>
+        <section class="contact-section">
+            <h2 class="section-title">Fale Conosco</h2>
+            <p class="section-subtitle">Tem alguma dúvida, sugestão ou apenas quer dizer um oi? Preencha o formulário abaixo!</p>
+            <form class="contact-form" action="#" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
 
-👉 Clique em “Gêneros” para explorar categorias como Romance, Aventura, HQs, Terror e muito mais.<br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
 
-📖 Veja os livros em destaque na nossa página inicial e conheça nossas recomendações especiais.<br>
+                <label for="subject">Assunto:</label>
+                <input type="text" id="subject" name="subject" placeholder="Sobre o que você quer falar?" required>
 
-🙋‍♀️ Na seção “Quem Somos” você descobre um pouco mais sobre nossa história e propósito.<br>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="6" placeholder="Deixe sua mensagem aqui..." required></textarea>
 
-🔎 Use a busca para encontrar rapidamente o título ou autor que deseja.<br>
-
-❤️ Adicione aos favoritos os livros que mais chamarem sua atenção para não perder nada.<br><br>
-
-Nosso catálogo conta com diferentes estilos:<br><br>
-✨ Histórias românticas cheias de emoção.<br>
-👻 Narrativas de terror para arrepiar.<br>
-🦸 Aventuras e HQs para quem ama ação e heróis.<br>
-🌍 Obras que transportam você para novos universos.<br>
-      </p>
-    </div>
-    </div>
+                <button type="submit" class="submit-btn">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
 
  <footer class="site-footer">
         <p>© 2025 Mundo Entre Linhas. Todos os direitos reservados.</p>
