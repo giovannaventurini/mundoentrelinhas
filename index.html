@@ -16,8 +16,16 @@
             <img src="img/logo.png" alt="logoheader" class="logo">
           <div class="cabecalho">
               <a href="">Início</a>
-              <a href="livros/index.html">Gêneros</a>
-              <a href="quemsomos/index.html">Quem somos</a>
+              <div class="dropdown">
+                <a href="#" class="dropdown-btn">Gêneros</a>
+                <div class="dropdown-content">
+                    <a href="livros/index.html">Românce</a>
+                    <a href="livros/macabro.html">Macabro</a>
+                    <a href="">HQS</a>
+                    <a href="">Suspense</a>
+                </div>
+              </div>
+                <a href="quem_somos/index.html">Quem somos</a>
           </div>
           <img src="img/sistema_solar.webp" alt="logoheader" class="logo">
         </div>
@@ -112,7 +120,23 @@ Nosso catálogo conta com diferentes estilos:<br><br>
 
         // Adiciona um "ouvinte" que chama a função sempre que a página for rolada
         window.addEventListener("scroll", scrollFunction);
-    </script>
+    
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+ 
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+  dropdownBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownContent.classList.toggle('show');
+  });
+
+  // Fecha o menu se clicar fora
+  window.addEventListener('click', (e) => {
+    if (!e.target.matches('.dropdown-btn')) {
+      dropdownContent.classList.remove('show');
+    }
+  });
+  </script>
 
 </body>
 </html>
