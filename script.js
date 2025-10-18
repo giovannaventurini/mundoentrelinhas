@@ -90,3 +90,21 @@ function minhafuncao() {
           x.style.display = "none";
         }
       }
+
+// --- CÓDIGO DO FORMULÁRIO DE CONTATO ---
+
+// Seleciona o formulário e a mensagem de sucesso
+const contactForm = document.querySelector('.contact-form');
+const successMessage = document.getElementById('success-message');
+
+// Adiciona um "ouvinte" para o evento de 'submit' (envio) do formulário
+contactForm.addEventListener('submit', (event) => {
+    // 1. Impede o comportamento padrão do formulário (que é recarregar a página)
+    event.preventDefault();
+
+    // 2. Esconde o formulário
+    contactForm.style.display = 'none';
+
+    // 3. Mostra a mensagem de sucesso adicionando a classe CSS
+    successMessage.classList.add('show-message');
+});

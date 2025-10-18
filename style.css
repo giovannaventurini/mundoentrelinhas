@@ -413,46 +413,69 @@ div p {
     margin-right: auto;
 }
 
-/* Seção "Como Funciona" */
+/* ---- SEÇÃO "COMO FUNCIONA" (LAYOUT CORRIGIDO E REFINADO) ---- */
 .how-it-works {
-    background-color: rgba(255, 255, 255, 0.85); /* Fundo branco com leve transparência */
-    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 40px 50px; /* Aumenta o espaçamento interno geral */
     border-radius: 15px;
     margin-bottom: 40px;
     border: 2px solid var(--cor-secundaria);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para o logo da Amazon na seção de passos */
-.step-logo {
-    max-width: 120px; /* Define a largura máxima do logo */
-    margin-top: 15px; /* Adiciona um espaço acima do logo */
-    opacity: 0.8; /* Deixa o logo um pouco mais sutil */
+.how-it-works .section-title {
+    margin-bottom: 10px;
 }
 
+.how-it-works .section-subtitle {
+    margin-bottom: 50px; /* Mais espaço entre o subtítulo e os cards */
+}
+
+/* O container que alinha os 4 passos */
 .steps-container {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    text-align: center;
+    /* PONTO CRÍTICO: Alinha todos os cards no topo, resolvendo o desalinhamento vertical */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px; /* Aumenta o espaço entre os cards para um melhor respiro */
 }
 
+/* Estilo de cada card de passo */
 .step {
-    flex: 1;
-    padding: 20px;
+    flex: 1; /* Garante que os cards dividam o espaço igualmente */
+    /* PONTO CRÍTICO: Centraliza todo o conteúdo (título, texto, imagem) para um visual limpo */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .step h3 {
     color: var(--cor-principal);
     font-size: 1.6em;
     margin-bottom: 15px;
+    /* Garante que os títulos fiquem bem alinhados mesmo se tiverem tamanhos diferentes */
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Estilo do texto descritivo */
 .step p {
-    color: #333;
     font-size: 1.1em;
     line-height: 1.6;
-    text-shadow: none; /* Remove a sombra de texto padrão */
+    color: #333;
+    text-shadow: none;
+    /* Força o alinhamento centralizado para um bloco de texto mais coeso */
+    text-align: center;
+}
+
+/* Estilo para a imagem que você adicionou */
+.step img {
+    max-width: 100%; /* A imagem se ajustará à largura do card */
+    height: auto;
+    margin-top: 20px; /* Adiciona um espaço consistente acima da imagem */
 }
 
 /* Seção de Formulário de Contato */
@@ -536,4 +559,32 @@ div p {
     .steps-container {
         flex-direction: column; /* Coloca os passos um abaixo do outro em telas menores */
     }
+}
+
+/* ---- ESTILO DA MENSAGEM DE SUCESSO DO FORMULÁRIO ---- */
+
+#success-message {
+    display: none; /* A mensagem começa escondida */
+    padding: 30px;
+    background-color: var(--cor-secundaria);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--cor-principal);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#success-message h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.8em;
+}
+
+#success-message p {
+    margin: 0;
+    font-size: 1.2em;
+    text-shadow: none;
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar a mensagem */
+.show-message {
+    display: block !important; /* O !important garante que a regra seja aplicada */
 }
