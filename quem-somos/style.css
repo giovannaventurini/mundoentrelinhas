@@ -1,0 +1,98 @@
+/* ---- ESTILOS DA PÁGINA "QUEM SOMOS" ---- */
+
+/* Estilo da seção de história */
+.about-section {
+    background-color: var(--cor-branco);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    margin-top: 35px; /* <-- ADICIONE ESTA LINHA */
+    box-shadow: var(--sombra-padrao);
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.story-content img {
+    max-width: 300px;
+    border-radius: 10px;
+    border: 3px solid var(--cor-secundaria);
+}
+
+.story-text h3 {
+    color: var(--cor-principal);
+    font-family: var(--fonte-titulos);
+    font-size: 1.8em;
+    margin-bottom: 1rem;
+}
+
+.story-text p {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Estilo da seção da equipe */
+.team-section {
+    padding: 2rem;
+}
+
+.team-container {
+    display: grid;
+    /* Cria um grid responsivo: tenta colocar 3 colunas, depois 2, depois 1 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* Espaço entre os cards */
+}
+
+.team-member-card {
+    background-color: var(--cor-branco);
+    border-radius: 15px;
+    box-shadow: var(--sombra-padrao);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-top: 5px solid var(--cor-principal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px); /* Efeito de "flutuar" */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.team-member-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Deixa a foto redonda */
+    object-fit: cover; /* Garante que a imagem não se estique */
+    border: 5px solid var(--cor-secundaria); /* Borda laranja na foto */
+    margin-bottom: 1rem;
+}
+
+.member-info h3 {
+    color: var(--cor-principal);
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+}
+
+.member-info h4 {
+    color: var(--cor-secundaria);
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.member-info p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+}
+
+
+/* ---- AJUSTES DE RESPONSIVIDADE PARA "QUEM SOMOS" ---- */
+@media (max-width: 768px) {
+    .story-content {
+        flex-direction: column; /* Coloca a imagem acima do texto em telas menores */
+    }
+}
