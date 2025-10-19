@@ -28,7 +28,9 @@ body {
     background: linear-gradient( to right, #1e0036, #dbc7fd, #1e0036); /* Define um fundo com gradiente de cores. */
     color: #333; /* Define a cor do texto padrão. */
     overflow-x: hidden; /* Esconde qualquer conteúdo que transborde horizontalmente. */
+
 }
+
 
 /* ---- CABEÇALHO (HEADER) ---- */
 

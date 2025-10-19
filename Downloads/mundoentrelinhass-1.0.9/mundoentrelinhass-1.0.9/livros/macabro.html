@@ -177,7 +177,66 @@ O protagonista do livro é Téo, um jovem e solitário estudante de medicina que
 
    <script src="../script.js"></script>
 
+   <script>
+    document.querySelectorAll('.stars').forEach((starContainer, index) => {
+  // Limpa as estrelas antigas
+  starContainer.innerHTML = '';
 
+  // Cria 5 estrelas fixas
+  for (let i = 1; i <= 5; i++) {
+    const span = document.createElement('span');
+    span.innerHTML = '&#9733;';
+    span.style.cursor = 'pointer';
+    span.dataset.value = i;
+    starContainer.appendChild(span);
+  }
+
+  // Recupera avaliação salva (se houver)
+  const savedRating = localStorage.getItem(`bookRating_${index}`);
+  if (savedRating) updateStars(starContainer, savedRating);
+
+  // Eventos de interação
+  starContainer.querySelectorAll('span').forEach(star => {
+    star.addEventListener('mouseenter', () => {
+      updateStars(starContainer, star.dataset.value);
+    });
+    star.addEventListener('mouseleave', () => {
+      const saved = localStorage.getItem(`bookRating_${index}`);
+      updateStars(starContainer, saved || 0);
+    });
+    star.addEventListener('click', () => {
+      const rating = star.dataset.value;
+      localStorage.setItem(`bookRating_${index}`, rating);
+      updateStars(starContainer, rating);
+    });
+  });
+});
+
+// Atualiza visualmente as estrelas
+function updateStars(container, rating) {
+  const colors = {
+    1: '#FF4B4B',  // vermelho
+    2: '#FF7A33',  // laranja avermelhado
+    3: '#FFA500',  // laranja
+    4: '#FFD633',  // amarelo forte
+    5: '#FFD700'   // dourado
+  };
+
+  const color = colors[rating] || '#555';
+
+  container.querySelectorAll('span').forEach(star => {
+    if (star.dataset.value <= rating) {
+      star.style.color = color;
+      star.style.transform = 'scale(1.1)';
+      star.style.textShadow = `0 0 8px ${color}`;
+    } else {
+      star.style.color = '#555';
+      star.style.transform = 'scale(1)';
+      star.style.textShadow = 'none';
+    }
+  });
+}
+   </script>
     
    
 

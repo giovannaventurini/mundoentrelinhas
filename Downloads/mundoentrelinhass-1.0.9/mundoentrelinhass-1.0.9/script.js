@@ -109,4 +109,8 @@ contactForm.addEventListener('submit', (event) => {
     successMessage.classList.add('show-message');
 });
 
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
+
 
