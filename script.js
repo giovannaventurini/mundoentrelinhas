@@ -109,3 +109,9 @@ contactForm.addEventListener('submit', (event) => {
     // 3. Mostra a mensagem de sucesso adicionando a classe CSS
     successMessage.classList.add('show-message');
 });
+
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
+
+
