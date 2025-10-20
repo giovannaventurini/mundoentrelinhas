@@ -32,6 +32,7 @@ const scrollFunction = () => {
 // Adiciona um "ouvinte" que chama a função sempre que a página for rolada
 window.addEventListener("scroll", scrollFunction);
 
+// Funções Livros
 function minhafuncao() {
         var x = document.getElementById("aparecer");
         if (x.style.display === "none") {
